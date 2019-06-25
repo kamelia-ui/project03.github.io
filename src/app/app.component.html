@@ -34,7 +34,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let d of apiData | paginate : {itemsPerPage: itemsperpage, currentPage: pageNo} | filter: searchModel">
+                  <tr *ngFor="let d of apiData |filter: searchModel | paginate : {itemsPerPage: itemsperpage, currentPage: pageNo}">
                       <td><input type="checkbox" [(ngModel)]="d.isFav" (change)="updateFav(d)"></td>
                     <td *ngFor="let e of objectValues(d)| slice:0:idx" style="font-size: 13px;">{{e}}</td>
                   </tr>
